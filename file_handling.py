@@ -4,7 +4,7 @@ def open_database():
     with open(database) as f:
         content = f.read().splitlines()
         todos = []
-        if content[0] != "":
+        if content[0] != "":        # empty file results []
             for line in content:
                 if line[1] == "X":
                     todos.append(["1",line[4:]])

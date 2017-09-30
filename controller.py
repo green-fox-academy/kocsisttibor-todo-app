@@ -24,7 +24,6 @@ def user_command():
             list_todos()
         elif len(arguments) == 2 and arguments[1] == "-a":
             print("Unable to add: no task provided")
-            return "Unable to add: no task provided"        # added to be checked by unittest
         elif len(arguments) == 3 and arguments[1] == "-a":
             add_todo(arguments[2])
         elif len(arguments) == 2 and arguments[1] == "-r":
