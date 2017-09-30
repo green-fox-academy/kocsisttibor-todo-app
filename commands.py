@@ -39,3 +39,15 @@ def complete_todo(num):
     todos = open_database()
     todos[int(num) - 1][0] = "1"
     save_database(todos)
+
+
+def complete_todo_error_handling(num):
+    todos = open_database()
+    if  isinstance(num, int):
+        if len(todos) >= int(num):
+            complete_todo(num)
+        else:
+            print("\nUnable to check: index is out of bound")
+    else:
+        print("\nUnable to check: index is not a number")
+
