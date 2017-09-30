@@ -1,0 +1,4 @@
+[X] Get milk
+[X] Go home
+[ ] Sleep well
+[ ] Make dinner

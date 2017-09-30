@@ -1,0 +1,46 @@
+C - create
+R - read n
+U - update
+D - delete
+
+USAGE
+lehetséges kapcsolók felsorolása
+
+
+1) get_arguments()
+import sys
+
+print(sys.argv)
+
+returns string
+
+2) user_command()
+	  print usage()
+	a add todo(str)
+	l list todo
+	r remove todo(int)
+	c complete todo(int)
+
++) file handling
+	write (append)
+	read
+
+	data-modell <-> todos.txt
+	egy lista lesz
+	ebben vagy listák(, vagy dictionary) [0, "todo01], [1, "todo02], [0, todo03]
+
+
+class TodoController():
+	def add
+	def list
+	...
+	
+	constructor
+		get_arguments()
+		open file
+
+===================
+
+M - model -> valóság leképezése: data-modell megalkotása, adatbázis kezelése
+V - view -> megjelenítése a program üzeneteinek, visszaadott válaszainak (usage, list of todos)
+C - controller
