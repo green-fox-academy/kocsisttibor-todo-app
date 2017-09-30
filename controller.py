@@ -1,5 +1,5 @@
 import sys
-from commands import list_todos, add_todo, remove_todo, remove_todo_error_handling, complete_todo
+from commands import list_todos, add_todo, remove_todo_error_handling, complete_todo
 
 def get_arguments():
     return sys.argv
@@ -17,6 +17,7 @@ def print_usage():
 
 def user_command():
     arguments = get_arguments()
+    print(arguments)
     try:
         if len(arguments) == 1:
             print_usage()
@@ -28,12 +29,12 @@ def user_command():
             add_todo(arguments[2])
         elif len(arguments) == 2 and arguments[1] == "-r":
             print("Unable to remove: no index provided")
-        elif len(arguments) == 3 and arguments[1] == "-r" and type(int(arguments[2])) is int:
+        elif len(arguments) == 3 and arguments[1] == "-r":
             remove_todo_error_handling(arguments[2])
-        elif len(arguments) == 3 and arguments[1] == "-c" and type(int(arguments[2])) is int:
+        elif len(arguments) == 3 and arguments[1] == "-c" and isinstance(arguments[2], int):
             complete_todo(arguments[2])
         else:
-            print("Not proper arguments given. Please check the available arguments.")
+            print("\nNot proper arguments given. Please check the available arguments.")
             print_usage()
     except ValueError:
         print("Not proper arguments given. Please check the available arguments.")

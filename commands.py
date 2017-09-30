@@ -11,7 +11,6 @@ def list_todos():
                 print(str(i + 1) + " - [ ]" + todos[i][1])
             else:
                 print(str(i + 1) + " - [X]" + todos[i][1])
-        
 
 def add_todo(todo):
     todos = open_database()
@@ -27,10 +26,13 @@ def remove_todo(num):
 
 def remove_todo_error_handling(num):
     todos = open_database()
-    if len(todos) >= int(num):
-        remove_todo(num)
+    if  isinstance(num, int):
+        if len(todos) >= int(num):
+            remove_todo(num)
+        else:
+            print("\nUnable to remove: index is out of bound")
     else:
-        print("\nUnable to remove: index is out of bound")
+        print("\nUnable to remove: index is not a number")
 
 
 def complete_todo(num):
