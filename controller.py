@@ -1,5 +1,5 @@
 import sys
-from commands import list_todos, add_todo, remove_todo, complete_todo
+from commands import list_todos, add_todo, remove_todo, remove_todo_error_handling, complete_todo
 
 def get_arguments():
     return sys.argv
@@ -26,8 +26,10 @@ def user_command():
             print("Unable to add: no task provided")
         elif len(arguments) == 3 and arguments[1] == "-a":
             add_todo(arguments[2])
+        elif len(arguments) == 2 and arguments[1] == "-r":
+            print("Unable to remove: no index provided")
         elif len(arguments) == 3 and arguments[1] == "-r" and type(int(arguments[2])) is int:
-            remove_todo(arguments[2])
+            remove_todo_error_handling(arguments[2])
         elif len(arguments) == 3 and arguments[1] == "-c" and type(int(arguments[2])) is int:
             complete_todo(arguments[2])
         else:

@@ -25,6 +25,14 @@ def remove_todo(num):
     save_database(todos)
 
 
+def remove_todo_error_handling(num):
+    todos = open_database()
+    if len(todos) >= int(num):
+        remove_todo(num)
+    else:
+        print("\nUnable to remove: index is out of bound")
+
+
 def complete_todo(num):
     todos = open_database()
     todos[int(num) - 1][0] = "1"
