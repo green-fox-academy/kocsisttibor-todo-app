@@ -22,6 +22,8 @@ def user_command():
             print_usage()
         elif len(arguments) == 2 and arguments[1] == "-l":
             list_todos()
+        elif len(arguments) == 2 and arguments[1] == "-a":
+            print("Unable to add: no task provided")
         elif len(arguments) == 3 and arguments[1] == "-a":
             add_todo(arguments[2])
         elif len(arguments) == 3 and arguments[1] == "-r" and type(int(arguments[2])) is int:
