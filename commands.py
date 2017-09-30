@@ -7,14 +7,12 @@ def list_todos():
     else:
         print("\nTodos\n")
         for i in range(len(todos)):
-            if todos[i][0] == "0":
-                print(str(i + 1) + " - [ ]" + todos[i][1])
-            else:
-                print(str(i + 1) + " - [X]" + todos[i][1])
+            print(str(i + 1) + "." + todos[i])
+
 
 def add_todo(todo):
     todos = open_database()
-    todos.append(["0", todo])
+    todos.append(" - [ ] " + todo)
     save_database(todos)
 
 
@@ -26,7 +24,7 @@ def remove_todo(num):
 
 def remove_todo_error_handling(num):
     todos = open_database()
-    if  isinstance(num, int):
+    if  isinstance(int(num), int):
         if len(todos) >= int(num):
             remove_todo(num)
         else:
@@ -37,13 +35,13 @@ def remove_todo_error_handling(num):
 
 def complete_todo(num):
     todos = open_database()
-    todos[int(num) - 1][0] = "1"
+    todos[int(num) - 1] = todos[int(num) - 1].replace("[ ]", "[X]", 1)
     save_database(todos)
 
 
 def complete_todo_error_handling(num):
     todos = open_database()
-    if  isinstance(num, int):
+    if  isinstance(int(num), int):
         if len(todos) >= int(num):
             complete_todo(num)
         else:

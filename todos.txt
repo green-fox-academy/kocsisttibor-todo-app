@@ -1,4 +1,4 @@
-[X] Get milk
-[X] Go home
-[ ] Sleep well
-[ ] Make dinner
+ - [X] Get milk
+ - [X] Go home
+ - [X] Sleep well
+ - [X] Buy chocolate
