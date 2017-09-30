@@ -6,13 +6,14 @@ def get_arguments():
 
 
 def print_usage():
-    print("\nCommand Line Todo application")
-    print("=============================\n")
-    print("Command line arguments:")
-    print("-l   Lists all the tasks")
-    print("-a   Adds a new task e.g.: -a 'New task'")
-    print("-r   Removes a task e.g.: -r 4")
-    print("-c   Completes a task e.g.: -c 4")
+    print(str("\n\
+    \nCommand Line Todo application\
+    \n=============================\n\
+    \nCommand line arguments:\
+    \n-l   Lists all the tasks\
+    \n-a   Adds a new task e.g.: -a 'New task'\
+    \n-r   Removes a task e.g.: -r 4\
+    \n-c   Completes a task e.g.: -c 4"))
 
 
 def user_command():
